@@ -1080,16 +1080,42 @@ section {
     }
 
     .floating-badge {
-        font-size: 0.7rem;
-        padding: 0.35rem 0.6rem;
-        min-width: 64px;
+        font-size: 0.65rem;
+        padding: 0.3rem 0.5rem;
+        min-width: 56px;
         opacity: 0.95;
+        position: absolute;
     }
 
-    /* Slightly tuck badges to avoid overlap on small screens */
-    .badge-a, .badge-b { top: -2%; }
-    .badge-c { right: -6%; top: 30%; }
-    .badge-f { left: -8%; top: 50%; }
+    /* Reposition all badges to avoid overlap on medium screens */
+    .badge-a { top: -8%; right: 5%; }
+    .badge-b { top: -8%; right: 35%; }
+    .badge-c { top: -8%; right: 65%; }
+    .badge-d { bottom: -8%; right: 5%; top: auto; }
+    .badge-e { bottom: -8%; right: 35%; top: auto; }
+    .badge-f { bottom: -8%; right: 65%; top: auto; }
+}
+
+@media (max-width: 768px) {
+    .floating-badge {
+        font-size: 0.6rem;
+        padding: 0.25rem 0.45rem;
+        min-width: 50px;
+    }
+
+    /* Stack badges above and below image on small screens */
+    .badge-a { top: -10%; right: 0%; }
+    .badge-b { top: -10%; right: 33%; }
+    .badge-c { top: -10%; right: 66%; }
+    .badge-d { bottom: -10%; right: 0%; top: auto; }
+    .badge-e { bottom: -10%; right: 33%; top: auto; }
+    .badge-f { bottom: -10%; right: 66%; top: auto; }
+}
+
+@media (max-width: 576px) {
+    .floating-badge {
+        display: none;
+    }
 }
 
 /* ========================================
