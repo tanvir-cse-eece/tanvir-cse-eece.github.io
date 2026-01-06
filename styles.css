@@ -826,6 +826,7 @@ section {
     position: relative;
     width: 320px;
     height: 400px;
+    overflow: visible;
 }
 
 .profile-image {
@@ -1077,6 +1078,7 @@ section {
     .image-container {
         width: 260px;
         height: 320px;
+        overflow: visible;
     }
 
     .floating-badge {
@@ -1084,32 +1086,36 @@ section {
         padding: 0.3rem 0.5rem;
         min-width: 56px;
         opacity: 0.95;
-        position: absolute;
     }
 
-    /* Reposition all badges to avoid overlap on medium screens */
-    .badge-a { top: -8%; right: 5%; }
-    .badge-b { top: -8%; right: 35%; }
-    .badge-c { top: -8%; right: 65%; }
-    .badge-d { bottom: -8%; right: 5%; top: auto; }
-    .badge-e { bottom: -8%; right: 35%; top: auto; }
-    .badge-f { bottom: -8%; right: 65%; top: auto; }
+    /* Reposition badges: 3 above, 3 below on medium screens */
+    .badge-a { top: -12%; right: auto; left: 50%; transform: translateX(-50%); }
+    .badge-b { top: -12%; right: -25%; left: auto; }
+    .badge-c { top: -12%; left: -25%; right: auto; }
+    .badge-d { bottom: -12%; top: auto; right: auto; left: 50%; transform: translateX(-50%); }
+    .badge-e { bottom: -12%; top: auto; right: -25%; left: auto; }
+    .badge-f { bottom: -12%; top: auto; left: -25%; right: auto; }
 }
 
 @media (max-width: 768px) {
     .floating-badge {
-        font-size: 0.6rem;
-        padding: 0.25rem 0.45rem;
-        min-width: 50px;
+        font-size: 0.55rem;
+        padding: 0.2rem 0.4rem;
+        min-width: 46px;
     }
 
-    /* Stack badges above and below image on small screens */
-    .badge-a { top: -10%; right: 0%; }
-    .badge-b { top: -10%; right: 33%; }
-    .badge-c { top: -10%; right: 66%; }
-    .badge-d { bottom: -10%; right: 0%; top: auto; }
-    .badge-e { bottom: -10%; right: 33%; top: auto; }
-    .badge-f { bottom: -10%; right: 66%; top: auto; }
+    .image-container {
+        width: 220px;
+        height: 280px;
+    }
+
+    /* Tighter positioning on small screens */
+    .badge-a { top: -14%; right: auto; left: 50%; transform: translateX(-50%); }
+    .badge-b { top: -14%; right: -15%; left: auto; transform: none; }
+    .badge-c { top: -14%; left: -15%; right: auto; transform: none; }
+    .badge-d { bottom: -14%; top: auto; right: auto; left: 50%; transform: translateX(-50%); }
+    .badge-e { bottom: -14%; top: auto; right: -15%; left: auto; transform: none; }
+    .badge-f { bottom: -14%; top: auto; left: -15%; right: auto; transform: none; }
 }
 
 @media (max-width: 576px) {
