@@ -15,12 +15,80 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize all features
     initNavigation();
-    initTypingEffect();
+    // typing effect disabled per user request
+    // initTypingEffect();
     initCustomCursor();
+    initRotatingTokens();
     initScrollEffects();
     initCounterAnimation();
     initContactForm();
 });
+
+/* ========================================
+   ROTATING HERO TOKENS
+   Rotates tokens one-by-one at the same spot with a blinking effect
+   ======================================== */
+function initRotatingTokens() {
+    const tokens = ['DevSecOps', 'Cybersecurity', 'Network Engg.', 'EDA & Research'];
+    const el = document.querySelector('.rotating-token');
+    if (!el) return;
+
+    let idx = 0;
+    const charDelay = 60; // ms between letters
+    const hold = 1400; // ms to hold the full token
+    const fadeStagger = 30; // ms stagger when fading out
+
+    function clearElement() {
+        while (el.firstChild) el.removeChild(el.firstChild);
+    }
+
+    function typeToken(token, cb) {
+        clearElement();
+        const spans = [];
+        for (let i = 0; i < token.length; i++) {
+            const span = document.createElement('span');
+            // preserve visible gaps by converting normal spaces to non-breaking spaces
+            span.textContent = token[i] === ' ' ? '\u00A0' : token[i];
+            span.style.opacity = '0';
+            span.style.display = 'inline-block';
+            span.style.transform = 'translateY(6px)';
+            span.style.transition = `opacity ${charDelay * 0.9}ms ease, transform ${charDelay * 0.9}ms ease`;
+            el.appendChild(span);
+            spans.push(span);
+        }
+
+        // reveal letters sequentially
+        spans.forEach((s, i) => {
+            setTimeout(() => {
+                s.style.opacity = '1';
+                s.style.transform = 'translateY(0)';
+            }, i * charDelay);
+        });
+
+        // after fully typed and held, fade out sequentially
+        const totalIn = spans.length * charDelay;
+        setTimeout(() => {
+            spans.forEach((s, i) => {
+                setTimeout(() => {
+                    s.style.opacity = '0';
+                    s.style.transform = 'translateY(-6px)';
+                }, i * fadeStagger);
+            });
+            // call callback after fade completes
+            setTimeout(() => cb && cb(), spans.length * fadeStagger + 250);
+        }, totalIn + hold);
+    }
+
+    function showNext() {
+        typeToken(tokens[idx], () => {
+            idx = (idx + 1) % tokens.length;
+            setTimeout(showNext, 300);
+        });
+    }
+
+    // initial start shortly after load
+    setTimeout(showNext, 500);
+}
 
 /* ========================================
    NAVIGATION
@@ -83,11 +151,9 @@ function initNavigation() {
 function initTypingEffect() {
     const typingText = document.querySelector('.typing-text');
     const titles = [
-        'Machine Learning Engineer',
-        'Deep Learning Researcher',
-        'Computer Vision Specialist',
-        'AI Enthusiast',
-        'Python Developer'
+        'Full-Stack',
+        'ML / DL',
+        'DevSecOps'
     ];
     
     let titleIndex = 0;
@@ -110,11 +176,11 @@ function initTypingEffect() {
 
         if (!isDeleting && charIndex === currentTitle.length) {
             isDeleting = true;
-            typingDelay = 2000; // Pause at end
+            typingDelay = 1800; // Pause at end
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             titleIndex = (titleIndex + 1) % titles.length;
-            typingDelay = 500; // Pause before new word
+            typingDelay = 400; // Pause before new word
         }
 
         setTimeout(type, typingDelay);
@@ -125,7 +191,7 @@ function initTypingEffect() {
 }
 
 /* ========================================
-   CUSTOM CURSOR
+   CUSTOM CURSOR - Premium Interactive
    ======================================== */
 function initCustomCursor() {
     const cursor = document.querySelector('.cursor');
@@ -133,30 +199,78 @@ function initCustomCursor() {
 
     // Only enable on desktop
     if (window.innerWidth < 1024) return;
+    if (!cursor || !cursorFollower) return;
+
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+    let followerX = 0, followerY = 0;
+
+    // Smooth cursor animation
+    function animateCursor() {
+        // Main cursor follows the mouse directly (no lag) to match original pointer speed
+        cursorX = mouseX;
+        cursorY = mouseY;
+        cursor.style.left = (cursorX - 6) + 'px';
+        cursor.style.top = (cursorY - 6) + 'px';
+
+        // Follower retains a smooth trailing motion
+        followerX += (mouseX - followerX) * 0.18;
+        followerY += (mouseY - followerY) * 0.18;
+        cursorFollower.style.left = (followerX - 24) + 'px';
+        cursorFollower.style.top = (followerY - 24) + 'px';
+
+        requestAnimationFrame(animateCursor);
+    }
 
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        
-        setTimeout(() => {
-            cursorFollower.style.left = e.clientX + 'px';
-            cursorFollower.style.top = e.clientY + 'px';
-        }, 50);
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        // Show cursor on first movement
+        cursor.style.display = 'block';
+        cursorFollower.style.display = 'block';
     });
 
-    // Cursor hover effects
-    const hoverElements = document.querySelectorAll('a, button, .project-card, .skill-item');
+    animateCursor();
+
+    // Interactive elements - buttons, links, cards
+    const hoverElements = document.querySelectorAll('a, button, .project-card, .skill-item, .btn, .social-link, .nav-link, .detail-card, .timeline-content, .club-item');
     
     hoverElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'scale(2)';
-            cursorFollower.style.transform = 'scale(1.5)';
+            cursor.classList.add('cursor-hover');
+            cursorFollower.classList.add('cursor-hover');
         });
 
         el.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'scale(1)';
-            cursorFollower.style.transform = 'scale(1)';
+            cursor.classList.remove('cursor-hover');
+            cursorFollower.classList.remove('cursor-hover');
         });
+    });
+
+    // Text elements - show text cursor style
+    const textElements = document.querySelectorAll('p, h1, h2, h3, h4, span:not(.skill-item span)');
+    
+    textElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('cursor-text');
+            cursorFollower.classList.add('cursor-text');
+        });
+
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('cursor-text');
+            cursorFollower.classList.remove('cursor-text');
+        });
+    });
+
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+        cursorFollower.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
+        cursorFollower.style.opacity = '0.8';
     });
 }
 
