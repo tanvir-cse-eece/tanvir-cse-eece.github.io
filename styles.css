@@ -820,13 +820,13 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 450px;
 }
 
 .image-container {
     position: relative;
     width: 320px;
     height: 400px;
-    overflow: visible;
 }
 
 .profile-image {
@@ -958,42 +958,42 @@ section {
 /* Positions around image - aligned horizontally on the right side, staggered vertically */
 .badge-a { /* right-side aligned 1 */
     top: 6%;
-    right: -12%;
+    right: -100px;
     --r: -3deg;
     --appear-delay: 0s;
     transform: rotate(var(--r));
 }
 .badge-b { /* right-side aligned 2 */
     top: 20%;
-    right: -12%;
+    right: -100px;
     --r: 4deg;
     --appear-delay: 0.5s;
     transform: rotate(var(--r));
 }
 .badge-c { /* right-side aligned 3 */
     top: 34%;
-    right: -12%;
+    right: -100px;
     --r: -2deg;
     --appear-delay: 1.0s;
     transform: rotate(var(--r));
 }
 .badge-d { /* right-side aligned 4 */
     top: 50%;
-    right: -12%;
+    right: -100px;
     --r: 2.5deg;
     --appear-delay: 1.5s;
     transform: rotate(var(--r));
 }
 .badge-e { /* right-side aligned 5 */
     top: 66%;
-    right: -12%;
+    right: -100px;
     --r: 5deg;
     --appear-delay: 2.0s;
     transform: rotate(var(--r));
 }
 .badge-f { /* right-side aligned 6 */
     top: 80%;
-    right: -12%;
+    right: -100px;
     --r: -4deg;
     --appear-delay: 2.5s;
     transform: rotate(var(--r));
@@ -1034,6 +1034,11 @@ section {
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+
+    .hero-image {
+        min-width: unset;
+        width: 100%;
     }
 
     .hero-name {
@@ -1078,7 +1083,6 @@ section {
     .image-container {
         width: 260px;
         height: 320px;
-        overflow: visible;
     }
 
     .floating-badge {
@@ -1086,36 +1090,20 @@ section {
         padding: 0.3rem 0.5rem;
         min-width: 56px;
         opacity: 0.95;
+        position: absolute;
+        right: auto !important;
     }
 
-    /* Reposition badges: 3 above, 3 below on medium screens */
-    .badge-a { top: -12%; right: auto; left: 50%; transform: translateX(-50%); }
-    .badge-b { top: -12%; right: -25%; left: auto; }
-    .badge-c { top: -12%; left: -25%; right: auto; }
-    .badge-d { bottom: -12%; top: auto; right: auto; left: 50%; transform: translateX(-50%); }
-    .badge-e { bottom: -12%; top: auto; right: -25%; left: auto; }
-    .badge-f { bottom: -12%; top: auto; left: -25%; right: auto; }
+    /* Hide badges on medium screens to prevent overlap */
+    .floating-badge {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
     .floating-badge {
-        font-size: 0.55rem;
-        padding: 0.2rem 0.4rem;
-        min-width: 46px;
+        display: none;
     }
-
-    .image-container {
-        width: 220px;
-        height: 280px;
-    }
-
-    /* Tighter positioning on small screens */
-    .badge-a { top: -14%; right: auto; left: 50%; transform: translateX(-50%); }
-    .badge-b { top: -14%; right: -15%; left: auto; transform: none; }
-    .badge-c { top: -14%; left: -15%; right: auto; transform: none; }
-    .badge-d { bottom: -14%; top: auto; right: auto; left: 50%; transform: translateX(-50%); }
-    .badge-e { bottom: -14%; top: auto; right: -15%; left: auto; transform: none; }
-    .badge-f { bottom: -14%; top: auto; left: -15%; right: auto; transform: none; }
 }
 
 @media (max-width: 576px) {
