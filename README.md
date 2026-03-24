@@ -8,12 +8,12 @@ Visit the live website: [https://tanvir-eece-cse.github.io](https://tanvir-eece-
 
 ## ✨ Features
 
-- **Modern Dark Theme** - Sleek dark design with cyan accent colors
-- **Responsive Design** - Works perfectly on desktop, tablet, and mobile
-- **Smooth Animations** - AOS (Animate on Scroll) library for engaging animations
-- **Interactive Elements** - Custom cursor, typing effect, and hover animations
-- **Single Page Application** - Smooth scrolling between sections
-- **Contact Form** - Direct email integration
+- **RA-Focused Positioning** - Content rewritten for academic research opportunities
+- **2026 Trend Projects** - Dummy research project ideas in current AI trend areas
+- **Responsive Design** - Works on desktop, tablet, and mobile
+- **Smooth Animations** - AOS-powered section transitions
+- **Single Page Layout** - Fast navigation across profile sections
+- **Contact Form** - Direct outreach for research collaboration
 
 ## 🛠️ Technologies Used
 
@@ -109,13 +109,13 @@ Edit CSS variables in `styles.css`:
 
 ## 📱 Sections
 
-1. **Hero** - Introduction with typing animation
-2. **About** - Personal bio and quick stats
-3. **Skills** - Technical skills organized by category
-4. **Projects** - Featured projects with descriptions
-5. **Experience** - Education and work timeline
-6. **Publications** - Research papers and achievements
-7. **Contact** - Contact form and social links
+1. **Hero** - RA-focused introduction and research keywords
+2. **About** - Academic profile and research objective
+3. **Skills** - CSE/ML/DL/Data Science research skill stack
+4. **RA-Ready Projects** - 2026 AI trend-aligned dummy project concepts
+5. **Academic Trajectory** - Education and research readiness timeline
+6. **Research Focus** - Priority themes for faculty collaboration
+7. **Contact** - Contact form and profile links
 
 ## 📧 Contact
 

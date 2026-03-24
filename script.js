@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
    Rotates tokens one-by-one at the same spot with a blinking effect
    ======================================== */
 function initRotatingTokens() {
-    const tokens = ['DevSecOps', 'Cybersecurity', 'Network Engg.', 'EDA & Research'];
+    const tokens = ['Vision-Language Models', 'LLM Reasoning', 'Multimodal Learning', 'Trustworthy ML'];
     const el = document.querySelector('.rotating-token');
     if (!el) return;
 
@@ -151,9 +151,9 @@ function initNavigation() {
 function initTypingEffect() {
     const typingText = document.querySelector('.typing-text');
     const titles = [
-        'Full-Stack',
+        'RA-Focused',
         'ML / DL',
-        'DevSecOps'
+        'Data Science'
     ];
     
     let titleIndex = 0;
