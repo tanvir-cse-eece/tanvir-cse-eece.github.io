@@ -7,17 +7,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize AOS (Animate On Scroll)
     AOS.init({
-        duration: 800,
-        easing: 'ease-out-cubic',
+        duration: 720,
+        easing: 'ease-out-sine',
         once: true,
-        offset: 100
+        offset: 70
     });
 
     // Initialize all features
     initNavigation();
     // typing effect disabled per user request
     // initTypingEffect();
-    initCustomCursor();
+    // cursor is intentionally disabled in the academic light theme
+    // initCustomCursor();
     initRotatingTokens();
     initScrollEffects();
     initCounterAnimation();
@@ -311,7 +312,7 @@ function initScrollEffects() {
         const shapes = document.querySelectorAll('.shape');
         
         shapes.forEach((shape, index) => {
-            const speed = 0.1 * (index + 1);
+            const speed = 0.06 * (index + 1);
             shape.style.transform = `translateY(${scrolled * speed}px)`;
         });
     });
