@@ -3,360 +3,375 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Md. Tanvir Hossain - Research Assistant Candidate specializing in Trustworthy ML, Graph Neural Networks, and Multimodal AI. Seeking RA positions in US research laboratories.">
-    <meta name="keywords" content="Research Assistant, Machine Learning, Deep Learning, NLP, Computer Vision, GNN, AI Research, PhD Candidate, Trustworthy AI">
+    <meta name="description" content="Md. Tanvir Hossain - AI/ML Researcher seeking Research Assistantship positions. Specializing in Trustworthy AI, Graph Neural Networks, and Multimodal Learning.">
+    <meta name="keywords" content="Research Assistant, Machine Learning, PhD, AI Research, Deep Learning, NLP, Computer Vision, Graduate Research">
     <meta name="author" content="Md. Tanvir Hossain">
-    <meta name="theme-color" content="#1e3a5f">
-    <title>Md. Tanvir Hossain | Research Assistant Portfolio</title>
+    <title>Tanvir Hossain | AI/ML Research Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Source+Serif+4:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">
-                <div class="logo-mark">MTH</div>
+    <!-- Floating Navigation -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="#home" class="nav-brand">
+                <span class="brand-icon">TH</span>
             </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#hero" class="nav-link active">Home</a></li>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#research" class="nav-link">Research</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#publications" class="nav-link">Publications</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="nav-right">
-                <a href="Tanvir_Hossain_RA_CV.pdf" target="_blank" class="btn-cv">
-                    <i class="fas fa-download"></i>
-                    Download CV
+            <div class="nav-actions">
+                <a href="Tanvir_Hossain_RA_CV.pdf" target="_blank" class="btn-download">
+                    <i class="fas fa-file-arrow-down"></i>
+                    <span>CV</span>
                 </a>
-                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-bg">
+    <!-- Hero Section - Modern Split Design -->
+    <section id="home" class="hero">
+        <div class="hero-backdrop">
             <div class="hero-gradient"></div>
-            <div class="hero-pattern"></div>
-        </div>
-        <div class="hero-container">
-            <div class="hero-content" data-animate="fade-up">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    <span>Available for Research Assistantship - Fall 2026</span>
-                </div>
-                <h1 class="hero-name">Md. Tanvir Hossain</h1>
-                <div class="hero-title-wrapper">
-                    <span class="hero-title" id="typedText">Machine Learning Researcher</span>
-                    <span class="cursor">|</span>
-                </div>
-                <p class="hero-intro">
-                    M.Sc. candidate in Computer Science & Engineering with research focus on
-                    <strong>Trustworthy Machine Learning</strong>, <strong>Graph Neural Networks</strong>,
-                    and <strong>Multimodal AI</strong>. Seeking Research Assistantship positions in
-                    US laboratories to contribute to cutting-edge AI research.
-                </p>
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <span class="stat-number">4+</span>
-                        <span class="stat-text">Research Projects</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="stat-number">1</span>
-                        <span class="stat-text">IEEE Publication</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="stat-number">3.65</span>
-                        <span class="stat-text">M.Sc. CGPA</span>
-                    </div>
-                </div>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i>
-                        Contact Me
-                    </a>
-                    <a href="#research" class="btn btn-secondary">
-                        <i class="fas fa-microscope"></i>
-                        View Research
-                    </a>
-                </div>
-                <div class="hero-socials">
-                    <a href="mailto:tanvir.eece.mist@gmail.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://github.com/tanvir-cse-eece" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/tanvir-eece-cse" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://scholar.google.com" target="_blank" aria-label="Google Scholar">
-                        <i class="fas fa-graduation-cap"></i>
-                    </a>
-                </div>
+            <div class="hero-grid"></div>
+            <div class="hero-orbs">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
             </div>
-            <div class="hero-visual" data-animate="fade-left">
-                <div class="profile-container">
-                    <div class="profile-frame">
-                        <img src="profile.jpg" alt="Md. Tanvir Hossain" class="profile-img">
+        </div>
+
+        <div class="hero-wrapper">
+            <div class="hero-left">
+                <div class="hero-image-container" data-reveal="zoom">
+                    <div class="image-frame">
+                        <img src="profile.jpg" alt="Md. Tanvir Hossain" class="hero-image">
+                        <div class="image-glow"></div>
                     </div>
-                    <div class="profile-badge badge-1">
+                    <div class="floating-card card-1">
                         <i class="fas fa-brain"></i>
                         <span>ML Research</span>
                     </div>
-                    <div class="profile-badge badge-2">
+                    <div class="floating-card card-2">
                         <i class="fas fa-shield-halved"></i>
-                        <span>Trustworthy AI</span>
+                        <span>AI Safety</span>
                     </div>
-                    <div class="profile-badge badge-3">
-                        <i class="fas fa-diagram-project"></i>
-                        <span>Graph Networks</span>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Open Source</span>
                     </div>
                 </div>
             </div>
-        </div>
-        <a href="#about" class="scroll-indicator">
-            <span>Scroll to explore</span>
-            <i class="fas fa-chevron-down"></i>
-        </a>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-label">About Me</span>
-                <h2 class="section-title">Academic Profile & Research Vision</h2>
-                <p class="section-desc">Committed to advancing AI safety and developing robust machine learning systems</p>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-main" data-animate="fade-right">
-                    <div class="about-text">
-                        <h3>Research Statement</h3>
-                        <p>
-                            I am a dedicated AI researcher pursuing my M.Sc. in Computer Science & Engineering
-                            at BRAC University, with a foundational B.Sc. in Electrical, Electronic and Communication
-                            Engineering from MIST. My research centers on developing <strong>trustworthy and robust
-                            machine learning systems</strong> that can be deployed safely in real-world applications.
-                        </p>
-                        <p>
-                            My work spans multiple interconnected domains: adversarial robustness and data poisoning
-                            detection in foundation models, graph-based reasoning systems for knowledge verification,
-                            and efficient multimodal AI for resource-constrained environments. I am particularly
-                            interested in the intersection of <strong>ML security</strong> and <strong>interpretability</strong>.
-                        </p>
-                        <h3>RA Capabilities</h3>
-                        <ul class="capability-list">
-                            <li>
-                                <i class="fas fa-check"></i>
-                                <span><strong>Literature Review & Synthesis:</strong> Systematic analysis of research papers with LaTeX documentation</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check"></i>
-                                <span><strong>Experimental Design:</strong> Rigorous methodology with statistical validation and reproducibility</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check"></i>
-                                <span><strong>Implementation:</strong> PyTorch, TensorFlow, JAX for ML/DL model development</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check"></i>
-                                <span><strong>Publication Support:</strong> Paper writing, figures, and conference formatting experience</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check"></i>
-                                <span><strong>Code Quality:</strong> Version control (Git), documentation, and clean coding practices</span>
-                            </li>
-                        </ul>
+            <div class="hero-right">
+                <div class="hero-content" data-reveal="fade-right">
+                    <div class="availability-badge">
+                        <span class="pulse"></span>
+                        <span>Open for RA Positions - Fall 2026</span>
                     </div>
-                </div>
 
-                <div class="about-sidebar" data-animate="fade-left">
-                    <div class="education-card">
-                        <h4><i class="fas fa-graduation-cap"></i> Education</h4>
-                        <div class="education-item">
-                            <div class="edu-logo">
-                                <img src="bracu_logo_12-0-2022.png" alt="BRAC University">
-                            </div>
-                            <div class="edu-details">
-                                <h5>M.Sc. in Computer Science & Engineering</h5>
-                                <p>BRAC University, Dhaka</p>
-                                <span class="edu-meta">CGPA: 3.65/4.00 | 2023 - Present</span>
-                            </div>
+                    <h1 class="hero-title">
+                        <span class="title-line">Hi, I'm</span>
+                        <span class="title-name">Tanvir Hossain</span>
+                    </h1>
+
+                    <div class="hero-subtitle">
+                        <span class="typing-label">I'm a</span>
+                        <span class="typing-text" id="typingText">Machine Learning Researcher</span>
+                        <span class="typing-cursor"></span>
+                    </div>
+
+                    <p class="hero-description">
+                        M.Sc. candidate in Computer Science at BRAC University, focused on building
+                        <strong>trustworthy</strong> and <strong>robust AI systems</strong>. I bring strong
+                        research methodology, hands-on ML engineering skills, and publication experience
+                        to advance cutting-edge research.
+                    </p>
+
+                    <div class="hero-highlights">
+                        <div class="highlight">
+                            <span class="highlight-value" data-count="4">0</span>
+                            <span class="highlight-label">Research Projects</span>
                         </div>
-                        <div class="education-item">
-                            <div class="edu-logo">
-                                <img src="mist_logo.png" alt="MIST">
-                            </div>
-                            <div class="edu-details">
-                                <h5>B.Sc. in EECE</h5>
-                                <p>Military Institute of Science & Technology</p>
-                                <span class="edu-meta">Graduated | 2017 - 2021</span>
-                            </div>
+                        <div class="highlight">
+                            <span class="highlight-value" data-count="1">0</span>
+                            <span class="highlight-label">IEEE Publication</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="highlight-value">3.65</span>
+                            <span class="highlight-label">M.Sc. CGPA</span>
                         </div>
                     </div>
 
-                    <div class="availability-card">
-                        <h4><i class="fas fa-calendar-check"></i> Availability</h4>
-                        <ul class="availability-list">
-                            <li>
-                                <i class="fas fa-clock"></i>
-                                <span>Immediate start for remote work</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-plane"></i>
-                                <span>Willing to relocate to US</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-user-clock"></i>
-                                <span>Full-time or part-time commitment</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-globe"></i>
-                                <span>Timezone: UTC+6 (flexible hours)</span>
-                            </li>
-                        </ul>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Get in Touch</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#research" class="btn btn-outline">
+                            <span>View Research</span>
+                        </a>
                     </div>
 
-                    <div class="contact-quick">
-                        <a href="mailto:tanvir.eece.mist@gmail.com" class="quick-link">
+                    <div class="hero-socials">
+                        <a href="mailto:tanvir.eece.mist@gmail.com" aria-label="Email" class="social-icon">
                             <i class="fas fa-envelope"></i>
-                            tanvir.eece.mist@gmail.com
+                        </a>
+                        <a href="https://github.com/tanvir-cse-eece" target="_blank" aria-label="GitHub" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/tanvir-eece-cse" target="_blank" aria-label="LinkedIn" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://scholar.google.com" target="_blank" aria-label="Google Scholar" class="social-icon">
+                            <i class="fas fa-graduation-cap"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="scroll-hint">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
     </section>
 
-    <!-- Research Interests Section -->
-    <section id="research" class="section section-alt">
+    <!-- About Section - Card Based Layout -->
+    <section id="about" class="section about">
         <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-label">Research Areas</span>
-                <h2 class="section-title">Areas of Expertise & Technical Skills</h2>
-                <p class="section-desc">Core research directions aligned with cutting-edge AI challenges</p>
+            <div class="section-heading" data-reveal="fade-up">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Research Background & Capabilities</h2>
+                <p class="section-subtitle">Bridging theoretical foundations with practical AI implementation</p>
             </div>
 
-            <div class="research-areas" data-animate="fade-up">
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-shield-halved"></i>
+            <div class="about-layout">
+                <div class="about-main" data-reveal="fade-up">
+                    <div class="about-statement">
+                        <h3>Research Philosophy</h3>
+                        <p>
+                            I am driven by the challenge of making AI systems that are not only powerful
+                            but also <strong>safe, interpretable, and fair</strong>. My research addresses
+                            real-world deployment concerns by developing robust defenses against adversarial
+                            attacks and data poisoning while ensuring models remain explainable to
+                            practitioners and stakeholders.
+                        </p>
+                        <p>
+                            With a background spanning electrical engineering and computer science, I
+                            bring a unique perspective to ML research, combining signal processing intuition
+                            with modern deep learning architectures.
+                        </p>
                     </div>
-                    <div class="research-content">
+
+                    <div class="capabilities-grid">
+                        <div class="cap-card">
+                            <div class="cap-icon"><i class="fas fa-book-open"></i></div>
+                            <h4>Literature Synthesis</h4>
+                            <p>Systematic review of research papers with LaTeX-ready documentation and critical analysis</p>
+                        </div>
+                        <div class="cap-card">
+                            <div class="cap-icon"><i class="fas fa-flask"></i></div>
+                            <h4>Experimental Design</h4>
+                            <p>Rigorous methodology with statistical validation, ablation studies, and reproducible protocols</p>
+                        </div>
+                        <div class="cap-card">
+                            <div class="cap-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h4>ML Engineering</h4>
+                            <p>PyTorch, TensorFlow, JAX for end-to-end model development with production-ready code</p>
+                        </div>
+                        <div class="cap-card">
+                            <div class="cap-icon"><i class="fas fa-file-lines"></i></div>
+                            <h4>Publication Support</h4>
+                            <p>Paper writing, conference formatting, figure creation, and peer review experience</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-sidebar" data-reveal="fade-left">
+                    <div class="info-card education-card">
+                        <div class="card-header">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Education</h4>
+                        </div>
+                        <div class="edu-item">
+                            <div class="edu-logo">
+                                <img src="bracu_logo_12-0-2022.png" alt="BRAC University">
+                            </div>
+                            <div class="edu-info">
+                                <h5>M.Sc. in Computer Science & Engineering</h5>
+                                <p>BRAC University, Dhaka</p>
+                                <span class="edu-detail">CGPA: 3.65/4.00 | 2023 - Present</span>
+                            </div>
+                        </div>
+                        <div class="edu-item">
+                            <div class="edu-logo">
+                                <img src="mist_logo.png" alt="MIST">
+                            </div>
+                            <div class="edu-info">
+                                <h5>B.Sc. in EECE</h5>
+                                <p>Military Institute of Science & Technology</p>
+                                <span class="edu-detail">Graduated | 2017 - 2021</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card ready-card">
+                        <div class="card-header">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>RA Readiness</h4>
+                        </div>
+                        <ul class="ready-list">
+                            <li><i class="fas fa-bolt"></i>Immediate remote work availability</li>
+                            <li><i class="fas fa-plane-departure"></i>Willing to relocate to USA</li>
+                            <li><i class="fas fa-clock"></i>Flexible hours (UTC+6)</li>
+                            <li><i class="fas fa-user-clock"></i>Full-time or part-time commitment</li>
+                        </ul>
+                    </div>
+
+                    <a href="mailto:tanvir.eece.mist@gmail.com" class="contact-banner">
+                        <i class="fas fa-envelope"></i>
+                        <span>tanvir.eece.mist@gmail.com</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section - Modern Cards -->
+    <section id="research" class="section research">
+        <div class="container">
+            <div class="section-heading" data-reveal="fade-up">
+                <span class="section-tag">Research</span>
+                <h2 class="section-title">Core Research Areas</h2>
+                <p class="section-subtitle">Focus areas aligned with pressing challenges in AI/ML</p>
+            </div>
+
+            <div class="research-grid" data-reveal="fade-up">
+                <article class="research-card">
+                    <div class="rc-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <div class="rc-content">
                         <h3>Trustworthy Machine Learning</h3>
-                        <p>Developing robust, fair, and interpretable AI systems with focus on adversarial resilience and safety guarantees</p>
-                        <div class="research-tags">
+                        <p>Building robust, fair, and interpretable AI with adversarial resilience and safety guarantees for real-world deployment</p>
+                        <div class="rc-tags">
                             <span>Adversarial ML</span>
-                            <span>Explainability (XAI)</span>
+                            <span>XAI</span>
                             <span>Robustness</span>
                             <span>Fairness</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="research-card">
-                    <div class="research-icon">
+                <article class="research-card">
+                    <div class="rc-icon">
                         <i class="fas fa-diagram-project"></i>
                     </div>
-                    <div class="research-content">
+                    <div class="rc-content">
                         <h3>Graph Neural Networks</h3>
-                        <p>Reasoning over structured and relational data using graph-based architectures for knowledge representation</p>
-                        <div class="research-tags">
+                        <p>Reasoning over structured and relational data for knowledge graphs, scientific claim verification, and molecule analysis</p>
+                        <div class="rc-tags">
                             <span>GCN / GAT</span>
                             <span>Knowledge Graphs</span>
-                            <span>Graph Reasoning</span>
+                            <span>Reasoning</span>
                             <span>Link Prediction</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-bolt"></i>
+                <article class="research-card">
+                    <div class="rc-icon">
+                        <i class="fas fa-microchip"></i>
                     </div>
-                    <div class="research-content">
+                    <div class="rc-content">
                         <h3>Efficient Deep Learning</h3>
-                        <p>Model compression and optimization techniques for deployment in resource-constrained environments</p>
-                        <div class="research-tags">
+                        <p>Model compression and optimization for deployment on resource-constrained devices and edge computing scenarios</p>
+                        <div class="rc-tags">
                             <span>Pruning</span>
                             <span>Quantization</span>
-                            <span>Knowledge Distillation</span>
+                            <span>Distillation</span>
                             <span>NAS</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="research-card">
-                    <div class="research-icon">
+                <article class="research-card">
+                    <div class="rc-icon">
                         <i class="fas fa-language"></i>
                     </div>
-                    <div class="research-content">
+                    <div class="rc-content">
                         <h3>Multimodal & Multilingual AI</h3>
-                        <p>Cross-modal learning and low-resource NLP for underrepresented languages and diverse data types</p>
-                        <div class="research-tags">
-                            <span>Vision-Language Models</span>
+                        <p>Vision-language models and cross-lingual transfer learning for low-resource languages and diverse data modalities</p>
+                        <div class="rc-tags">
+                            <span>VLMs</span>
                             <span>LLMs</span>
                             <span>Low-Resource NLP</span>
-                            <span>Cross-lingual Transfer</span>
+                            <span>Cross-lingual</span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
 
-            <div class="skills-section" data-animate="fade-up">
-                <h3 class="skills-title">Technical Proficiencies</h3>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4><i class="fas fa-code"></i> Programming Languages</h4>
-                        <div class="skill-items">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">MATLAB</span>
+            <!-- Technical Skills -->
+            <div class="skills-container" data-reveal="fade-up">
+                <h3 class="skills-heading">Technical Stack</h3>
+                <div class="skills-row">
+                    <div class="skill-group">
+                        <h4><i class="fas fa-code"></i>Languages</h4>
+                        <div class="skill-pills">
+                            <span>Python</span>
+                            <span>C++</span>
+                            <span>Java</span>
+                            <span>SQL</span>
+                            <span>MATLAB</span>
                         </div>
                     </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-brain"></i> ML/DL Frameworks</h4>
-                        <div class="skill-items">
-                            <span class="skill-tag primary">PyTorch</span>
-                            <span class="skill-tag primary">TensorFlow</span>
-                            <span class="skill-tag">JAX</span>
-                            <span class="skill-tag">Hugging Face</span>
-                            <span class="skill-tag">PyTorch Lightning</span>
+                    <div class="skill-group">
+                        <h4><i class="fas fa-brain"></i>ML/DL</h4>
+                        <div class="skill-pills">
+                            <span class="highlight">PyTorch</span>
+                            <span class="highlight">TensorFlow</span>
+                            <span>JAX</span>
+                            <span>Hugging Face</span>
+                            <span>Lightning</span>
                         </div>
                     </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-chart-line"></i> Data Science & Visualization</h4>
-                        <div class="skill-items">
-                            <span class="skill-tag">NumPy</span>
-                            <span class="skill-tag">Pandas</span>
-                            <span class="skill-tag">scikit-learn</span>
-                            <span class="skill-tag">Matplotlib</span>
-                            <span class="skill-tag">Seaborn</span>
+                    <div class="skill-group">
+                        <h4><i class="fas fa-chart-line"></i>Data Science</h4>
+                        <div class="skill-pills">
+                            <span>NumPy</span>
+                            <span>Pandas</span>
+                            <span>scikit-learn</span>
+                            <span>Matplotlib</span>
+                            <span>Seaborn</span>
                         </div>
                     </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-tools"></i> Research Tools</h4>
-                        <div class="skill-items">
-                            <span class="skill-tag">Git/GitHub</span>
-                            <span class="skill-tag">LaTeX</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Linux</span>
-                            <span class="skill-tag">Weights & Biases</span>
+                    <div class="skill-group">
+                        <h4><i class="fas fa-toolbox"></i>Tools</h4>
+                        <div class="skill-pills">
+                            <span>Git</span>
+                            <span>LaTeX</span>
+                            <span>Docker</span>
+                            <span>Linux</span>
+                            <span>W&B</span>
                         </div>
                     </div>
                 </div>
@@ -364,152 +379,121 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
+    <!-- Projects Section - Bento Grid -->
+    <section id="projects" class="section projects">
         <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-label">Research Portfolio</span>
-                <h2 class="section-title">Selected Research Projects</h2>
-                <p class="section-desc">Demonstrating rigorous methodology, clear problem formulation, and measurable outcomes</p>
+            <div class="section-heading" data-reveal="fade-up">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Research Projects</h2>
+                <p class="section-subtitle">Selected work demonstrating research methodology and technical depth</p>
             </div>
 
-            <div class="projects-grid">
-                <article class="project-card featured" data-animate="fade-up">
-                    <div class="project-header">
-                        <span class="project-badge">Featured Research</span>
-                        <span class="project-category">
-                            <i class="fas fa-eye"></i>
-                            Computer Vision
-                        </span>
+            <div class="projects-bento" data-reveal="fade-up">
+                <!-- Featured Project -->
+                <article class="project-item featured">
+                    <div class="project-badge">Featured Research</div>
+                    <div class="project-category">
+                        <i class="fas fa-eye"></i>
+                        <span>Computer Vision</span>
                     </div>
-                    <h3 class="project-title">OpenWorld Scene Grounding for Embodied Vision</h3>
-                    <div class="project-body">
-                        <div class="project-detail">
-                            <span class="detail-label">Problem</span>
-                            <p>Ground free-form natural language instructions in open-set indoor scenes for embodied AI agents</p>
+                    <h3>OpenWorld Scene Grounding for Embodied AI</h3>
+                    <div class="project-details">
+                        <div class="detail-block">
+                            <span class="detail-title">Problem</span>
+                            <p>Ground natural language instructions in open-set indoor scenes for embodied agents</p>
                         </div>
-                        <div class="project-detail">
-                            <span class="detail-label">Method</span>
-                            <p>Cross-attention vision-language transformer architecture with hard negative mining strategy</p>
+                        <div class="detail-block">
+                            <span class="detail-title">Method</span>
+                            <p>Cross-attention vision-language transformer with hard negative mining</p>
                         </div>
-                        <div class="project-detail">
-                            <span class="detail-label">Datasets</span>
-                            <p>ScanRefer, RefCOCOg, synthetic hard negatives for contrastive learning</p>
-                        </div>
-                        <div class="project-results">
-                            <span class="detail-label">Results</span>
-                            <div class="result-metrics">
-                                <span class="metric"><strong>+4.8</strong> Acc@0.5</span>
-                                <span class="metric"><strong>18%</strong> Lower Latency</span>
-                            </div>
+                        <div class="detail-block">
+                            <span class="detail-title">Data</span>
+                            <p>ScanRefer, RefCOCOg with synthetic negatives</p>
                         </div>
                     </div>
-                    <div class="project-footer">
-                        <a href="https://github.com/tanvir-cse-eece" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                        <a href="#" class="project-link">
-                            <i class="fas fa-file-pdf"></i> Report
-                        </a>
+                    <div class="project-results">
+                        <div class="result"><strong>+4.8</strong> Acc@0.5</div>
+                        <div class="result"><strong>18%</strong> Lower Latency</div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tanvir-cse-eece" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        <a href="#"><i class="fas fa-file-pdf"></i> Report</a>
                     </div>
                 </article>
 
-                <article class="project-card" data-animate="fade-up" data-delay="100">
-                    <div class="project-header">
-                        <span class="project-category">
-                            <i class="fas fa-shield-virus"></i>
-                            ML Security
-                        </span>
+                <!-- Regular Projects -->
+                <article class="project-item">
+                    <div class="project-category">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>ML Security</span>
                     </div>
-                    <h3 class="project-title">PoisonWatch: Data Poisoning Detection in Foundation Models</h3>
-                    <div class="project-body">
-                        <div class="project-detail">
-                            <span class="detail-label">Problem</span>
-                            <p>Detect poisoned mini-batches during foundation model fine-tuning</p>
+                    <h3>PoisonWatch: Data Poisoning Detection</h3>
+                    <div class="project-details">
+                        <div class="detail-block">
+                            <span class="detail-title">Problem</span>
+                            <p>Detect poisoned batches during foundation model fine-tuning</p>
                         </div>
-                        <div class="project-detail">
-                            <span class="detail-label">Method</span>
-                            <p>Gradient-statistics anomaly ensemble detector with real-time monitoring</p>
-                        </div>
-                        <div class="project-results">
-                            <span class="detail-label">Results</span>
-                            <div class="result-metrics">
-                                <span class="metric"><strong>0.91</strong> AUC</span>
-                                <span class="metric"><strong>43%</strong> Attack Reduction</span>
-                            </div>
+                        <div class="detail-block">
+                            <span class="detail-title">Method</span>
+                            <p>Gradient-statistics anomaly ensemble with real-time monitoring</p>
                         </div>
                     </div>
-                    <div class="project-footer">
-                        <a href="https://github.com/tanvir-cse-eece" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                        <a href="#" class="project-link">
-                            <i class="fas fa-scroll"></i> Preprint
-                        </a>
+                    <div class="project-results">
+                        <div class="result"><strong>0.91</strong> AUC</div>
+                        <div class="result"><strong>43%</strong> Attack Reduction</div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tanvir-cse-eece" target="_blank"><i class="fab fa-github"></i> Code</a>
                     </div>
                 </article>
 
-                <article class="project-card" data-animate="fade-up" data-delay="200">
-                    <div class="project-header">
-                        <span class="project-category">
-                            <i class="fas fa-language"></i>
-                            NLP
-                        </span>
+                <article class="project-item">
+                    <div class="project-category">
+                        <i class="fas fa-language"></i>
+                        <span>NLP</span>
                     </div>
-                    <h3 class="project-title">Low-Resource Multilingual Reasoning via Test-Time Adaptation</h3>
-                    <div class="project-body">
-                        <div class="project-detail">
-                            <span class="detail-label">Problem</span>
-                            <p>Stabilize reasoning quality for low-resource languages at inference time</p>
+                    <h3>Low-Resource Multilingual Reasoning</h3>
+                    <div class="project-details">
+                        <div class="detail-block">
+                            <span class="detail-title">Problem</span>
+                            <p>Stabilize LLM reasoning for low-resource languages at inference</p>
                         </div>
-                        <div class="project-detail">
-                            <span class="detail-label">Method</span>
-                            <p>Test-time adaptation with confidence-aware decoding and self-consistency</p>
-                        </div>
-                        <div class="project-results">
-                            <span class="detail-label">Results</span>
-                            <div class="result-metrics">
-                                <span class="metric"><strong>+6.1</strong> F1 Score</span>
-                                <span class="metric"><strong>5</strong> Languages</span>
-                            </div>
+                        <div class="detail-block">
+                            <span class="detail-title">Method</span>
+                            <p>Test-time adaptation with confidence-aware decoding</p>
                         </div>
                     </div>
-                    <div class="project-footer">
-                        <a href="https://github.com/tanvir-cse-eece" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
+                    <div class="project-results">
+                        <div class="result"><strong>+6.1</strong> F1 Score</div>
+                        <div class="result"><strong>5</strong> Languages</div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tanvir-cse-eece" target="_blank"><i class="fab fa-github"></i> Code</a>
                     </div>
                 </article>
 
-                <article class="project-card" data-animate="fade-up" data-delay="300">
-                    <div class="project-header">
-                        <span class="project-category">
-                            <i class="fas fa-project-diagram"></i>
-                            Graph Learning
-                        </span>
+                <article class="project-item">
+                    <div class="project-category">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Graph ML</span>
                     </div>
-                    <h3 class="project-title">GraphReasoner: Multi-hop Claim Verification</h3>
-                    <div class="project-body">
-                        <div class="project-detail">
-                            <span class="detail-label">Problem</span>
-                            <p>Verify complex scientific claims requiring multi-hop evidence chains</p>
+                    <h3>GraphReasoner: Multi-hop Claim Verification</h3>
+                    <div class="project-details">
+                        <div class="detail-block">
+                            <span class="detail-title">Problem</span>
+                            <p>Verify scientific claims requiring multi-hop evidence</p>
                         </div>
-                        <div class="project-detail">
-                            <span class="detail-label">Method</span>
-                            <p>Retrieval-augmented graph reasoner with symbolic consistency checks</p>
-                        </div>
-                        <div class="project-results">
-                            <span class="detail-label">Results</span>
-                            <div class="result-metrics">
-                                <span class="metric"><strong>+5.3</strong> Evidence F1</span>
-                                <span class="metric"><strong>Better</strong> Calibration</span>
-                            </div>
+                        <div class="detail-block">
+                            <span class="detail-title">Method</span>
+                            <p>RAG-based graph reasoner with symbolic consistency</p>
                         </div>
                     </div>
-                    <div class="project-footer">
-                        <a href="https://github.com/tanvir-cse-eece" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
+                    <div class="project-results">
+                        <div class="result"><strong>+5.3</strong> Evidence F1</div>
+                        <div class="result"><strong>Better</strong> Calibration</div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tanvir-cse-eece" target="_blank"><i class="fab fa-github"></i> Code</a>
                     </div>
                 </article>
             </div>
@@ -517,73 +501,73 @@
     </section>
 
     <!-- Publications Section -->
-    <section id="publications" class="section section-alt">
+    <section id="publications" class="section publications">
         <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-label">Academic Output</span>
-                <h2 class="section-title">Publications & Research Papers</h2>
-                <p class="section-desc">Peer-reviewed contributions and ongoing research work</p>
+            <div class="section-heading" data-reveal="fade-up">
+                <span class="section-tag">Publications</span>
+                <h2 class="section-title">Research Output</h2>
+                <p class="section-subtitle">Peer-reviewed work and ongoing research papers</p>
             </div>
 
-            <div class="publications-list">
-                <article class="publication-card" data-animate="fade-up">
+            <div class="publications-list" data-reveal="fade-up">
+                <article class="pub-card">
                     <div class="pub-status published">
                         <i class="fas fa-check-circle"></i>
                         Published
                     </div>
-                    <div class="pub-content">
+                    <div class="pub-body">
                         <h3>Depression Detection from Social Media Comments Using Deep Learning with Interpretability</h3>
                         <p class="pub-authors">S. M. A. Hasan and <strong>M. T. Hossain</strong></p>
                         <p class="pub-venue"><i class="fas fa-book"></i> IEEE ICISET 2024</p>
                         <p class="pub-abstract">
-                            Developed an interpretable NLP pipeline for mental health detection from social media,
-                            combining deep learning with SHAP-based explanations for clinical validation.
+                            Interpretable NLP pipeline for mental health detection combining deep learning
+                            with SHAP-based explanations for clinical validation and practitioner trust.
                         </p>
                     </div>
                     <div class="pub-actions">
-                        <a href="https://ieeexplore.ieee.org/abstract/document/10939983" target="_blank" class="pub-link primary">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10939983" target="_blank" class="pub-btn primary">
                             <i class="fas fa-external-link-alt"></i> IEEE Xplore
                         </a>
                     </div>
                 </article>
 
-                <article class="publication-card" data-animate="fade-up" data-delay="100">
-                    <div class="pub-status preprint">
+                <article class="pub-card">
+                    <div class="pub-status prep">
                         <i class="fas fa-hourglass-half"></i>
                         In Preparation
                     </div>
-                    <div class="pub-content">
+                    <div class="pub-body">
                         <h3>PoisonWatch: Early Detection of Data Poisoning in Foundation Model Fine-Tuning</h3>
                         <p class="pub-authors"><strong>M. T. Hossain</strong> et al.</p>
-                        <p class="pub-venue"><i class="fas fa-file-alt"></i> Preprint (Under Preparation)</p>
+                        <p class="pub-venue"><i class="fas fa-file-alt"></i> Preprint</p>
                         <p class="pub-abstract">
-                            Novel gradient-based anomaly detection framework for identifying poisoned training samples
-                            in real-time during foundation model fine-tuning, with reproducibility protocol.
+                            Novel gradient-based anomaly detection framework for identifying poisoned samples
+                            in real-time during fine-tuning with full reproducibility protocol.
                         </p>
                     </div>
                     <div class="pub-actions">
-                        <a href="https://github.com/tanvir-cse-eece" target="_blank" class="pub-link">
+                        <a href="https://github.com/tanvir-cse-eece" target="_blank" class="pub-btn">
                             <i class="fab fa-github"></i> Code
                         </a>
                     </div>
                 </article>
 
-                <article class="publication-card" data-animate="fade-up" data-delay="200">
+                <article class="pub-card">
                     <div class="pub-status draft">
                         <i class="fas fa-edit"></i>
                         Working Paper
                     </div>
-                    <div class="pub-content">
+                    <div class="pub-body">
                         <h3>Low-Resource Multilingual Reasoning via Test-Time Adaptation</h3>
                         <p class="pub-authors"><strong>M. T. Hossain</strong> (First Author)</p>
-                        <p class="pub-venue"><i class="fas fa-pen"></i> Working Paper</p>
+                        <p class="pub-venue"><i class="fas fa-pen"></i> In Progress</p>
                         <p class="pub-abstract">
-                            Test-time adaptation strategies for improving reasoning capabilities of LLMs
-                            on low-resource languages, with comprehensive multilingual benchmark evaluation.
+                            Test-time adaptation strategies for improving LLM reasoning on low-resource
+                            languages with comprehensive multilingual benchmark evaluation.
                         </p>
                     </div>
                     <div class="pub-actions">
-                        <a href="https://github.com/tanvir-cse-eece" target="_blank" class="pub-link">
+                        <a href="https://github.com/tanvir-cse-eece" target="_blank" class="pub-btn">
                             <i class="fab fa-github"></i> Code
                         </a>
                     </div>
@@ -593,109 +577,98 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="section contact">
         <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-label">Get In Touch</span>
-                <h2 class="section-title">Let's Discuss Research Collaboration</h2>
-                <p class="section-desc">Open to Research Assistantship opportunities and academic collaborations</p>
+            <div class="section-heading" data-reveal="fade-up">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Open to Research Assistantship opportunities and collaborations</p>
             </div>
 
-            <div class="contact-grid">
-                <div class="contact-info" data-animate="fade-right">
-                    <div class="contact-intro">
+            <div class="contact-wrapper" data-reveal="fade-up">
+                <div class="contact-info">
+                    <div class="info-intro">
                         <h3>Ready to Contribute</h3>
                         <p>
-                            I am actively seeking Research Assistantship positions in US CSE/ML/Data Science
-                            laboratories. I am prepared to contribute to literature reviews, experimental design,
-                            implementation, and publication-oriented research.
+                            I am seeking RA positions in US CSE/ML/Data Science laboratories where I can
+                            contribute to literature reviews, experimental design, implementation, and
+                            publication-oriented research.
                         </p>
                     </div>
 
-                    <div class="contact-details">
-                        <a href="mailto:tanvir.eece.mist@gmail.com" class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-label">Email</span>
-                                <span class="contact-value">tanvir.eece.mist@gmail.com</span>
+                    <div class="contact-methods">
+                        <a href="mailto:tanvir.eece.mist@gmail.com" class="contact-card">
+                            <div class="cc-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="cc-text">
+                                <span class="cc-label">Email</span>
+                                <span class="cc-value">tanvir.eece.mist@gmail.com</span>
                             </div>
                         </a>
-
-                        <a href="tel:+8801837062962" class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-label">Phone</span>
-                                <span class="contact-value">+880 1837-062962</span>
+                        <a href="tel:+8801837062962" class="contact-card">
+                            <div class="cc-icon"><i class="fas fa-phone"></i></div>
+                            <div class="cc-text">
+                                <span class="cc-label">Phone</span>
+                                <span class="cc-value">+880 1837-062962</span>
                             </div>
                         </a>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-label">Location</span>
-                                <span class="contact-value">Dhaka, Bangladesh (UTC+6)</span>
+                        <div class="contact-card">
+                            <div class="cc-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="cc-text">
+                                <span class="cc-label">Location</span>
+                                <span class="cc-value">Dhaka, Bangladesh (UTC+6)</span>
                             </div>
                         </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-label">Availability</span>
-                                <span class="contact-value">Immediate for Remote RA Work</span>
+                        <div class="contact-card">
+                            <div class="cc-icon"><i class="fas fa-clock"></i></div>
+                            <div class="cc-text">
+                                <span class="cc-label">Availability</span>
+                                <span class="cc-value">Immediate for Remote Work</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="contact-social">
-                        <h4>Connect With Me</h4>
-                        <div class="social-links">
-                            <a href="https://github.com/tanvir-cse-eece" target="_blank" class="social-link">
+                    <div class="social-section">
+                        <h4>Find Me Online</h4>
+                        <div class="social-row">
+                            <a href="https://github.com/tanvir-cse-eece" target="_blank" class="social-btn">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="https://www.linkedin.com/in/tanvir-eece-cse" target="_blank" class="social-link">
+                            <a href="https://www.linkedin.com/in/tanvir-eece-cse" target="_blank" class="social-btn">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://scholar.google.com" target="_blank" class="social-link">
+                            <a href="https://scholar.google.com" target="_blank" class="social-btn">
                                 <i class="fas fa-graduation-cap"></i>
                             </a>
-                            <a href="https://orcid.org" target="_blank" class="social-link">
+                            <a href="https://orcid.org" target="_blank" class="social-btn">
                                 <i class="fab fa-orcid"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="contact-form-wrapper" data-animate="fade-left">
+                <div class="contact-form-container">
                     <form class="contact-form" id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
+                        <div class="form-grid">
+                            <div class="form-field">
                                 <label for="name">Your Name</label>
                                 <input type="text" id="name" name="name" placeholder="Prof. John Smith" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-field">
                                 <label for="email">Your Email</label>
                                 <input type="email" id="email" name="email" placeholder="john.smith@university.edu" required>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-field">
                             <label for="subject">Subject</label>
                             <input type="text" id="subject" name="subject" placeholder="Research Assistantship Inquiry" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-field">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="I am interested in discussing potential RA opportunities in my lab..." required></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="I'm interested in discussing potential RA opportunities..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-submit">
+                            <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
-                            Send Message
                         </button>
                     </form>
                 </div>
@@ -708,15 +681,15 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="logo-mark small">MTH</div>
+                    <span class="brand-icon small">TH</span>
                     <span>Md. Tanvir Hossain</span>
                 </div>
-                <p class="footer-tagline">AI Researcher | Seeking Research Assistantship Opportunities</p>
+                <p class="footer-tagline">AI Researcher | Seeking RA Opportunities</p>
                 <div class="footer-links">
                     <a href="mailto:tanvir.eece.mist@gmail.com">tanvir.eece.mist@gmail.com</a>
-                    <span class="divider">|</span>
+                    <span>|</span>
                     <a href="https://github.com/tanvir-cse-eece" target="_blank">GitHub</a>
-                    <span class="divider">|</span>
+                    <span>|</span>
                     <a href="https://www.linkedin.com/in/tanvir-eece-cse" target="_blank">LinkedIn</a>
                 </div>
                 <p class="footer-copyright">&copy; 2026 Md. Tanvir Hossain. All rights reserved.</p>
@@ -725,7 +698,7 @@
     </footer>
 
     <!-- Back to Top -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <button class="back-top" id="backTop" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
