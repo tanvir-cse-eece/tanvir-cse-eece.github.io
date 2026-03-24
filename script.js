@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
    Rotates tokens one-by-one at the same spot with a blinking effect
    ======================================== */
 function initRotatingTokens() {
-    const tokens = ['Vision-Language Models', 'LLM Reasoning', 'Multimodal Learning', 'Trustworthy ML'];
+    const tokens = ['Trustworthy ML', 'Graph Neural Networks', 'Efficient Deep Learning', 'Multimodal AI'];
     const el = document.querySelector('.rotating-token');
     if (!el) return;
 
