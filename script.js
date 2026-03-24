@@ -1,18 +1,17 @@
 /* ========================================
-   TANVIR HOSSAIN - RESEARCH PORTFOLIO
-   Modern Interactive JavaScript
-   Clean Animations & Smooth Interactions
+   MD. TANVIR HOSSAIN - RESEARCH PORTFOLIO
+   Professional Academic JavaScript
+   Smooth Animations & Clean Interactions
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initTypingEffect();
     initScrollAnimations();
-    initCounterAnimation();
-    initContactForm();
     initSmoothScroll();
     initBackToTop();
-    initParallax();
+    initContactForm();
+    initParallaxBadges();
 });
 
 /* ========================================
@@ -20,132 +19,149 @@ document.addEventListener('DOMContentLoaded', () => {
    ======================================== */
 function initNavigation() {
     const navbar = document.getElementById('navbar');
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-    const navItems = document.querySelectorAll('.nav-item');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    const allNavLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
 
     // Scroll effect for navbar
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.scrollY;
+    let lastScrollY = window.scrollY;
 
-        if (currentScroll > 50) {
+    const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
 
-        lastScroll = currentScroll;
-    });
+        lastScrollY = currentScrollY;
+    };
 
-    // Mobile toggle
-    if (navToggle) {
-        navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
+    window.addEventListener('scroll', throttle(handleScroll, 100));
+
+    // Mobile navigation toggle
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
         });
     }
 
-    // Close menu on link click
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
+    // Close mobile menu on link click
+    allNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
 
-    // Active link on scroll
-    const sections = document.querySelectorAll('section[id]');
-
-    function updateActiveLink() {
+    // Active navigation on scroll
+    const updateActiveNav = () => {
         const scrollY = window.pageYOffset;
 
         sections.forEach(section => {
             const sectionHeight = section.offsetHeight;
-            const sectionTop = section.offsetTop - 120;
+            const sectionTop = section.offsetTop - 150;
             const sectionId = section.getAttribute('id');
-            const navItem = document.querySelector(`.nav-item[href="#${sectionId}"]`);
+            const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
 
-            if (navItem) {
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    navItems.forEach(item => item.classList.remove('active'));
-                    navItem.classList.add('active');
+            if (navLink) {
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    allNavLinks.forEach(link => link.classList.remove('active'));
+                    navLink.classList.add('active');
                 }
             }
         });
-    }
+    };
 
-    window.addEventListener('scroll', updateActiveLink);
-    updateActiveLink();
+    window.addEventListener('scroll', throttle(updateActiveNav, 100));
+    updateActiveNav();
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            mobileToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 }
 
 /* ========================================
    TYPING EFFECT
    ======================================== */
 function initTypingEffect() {
-    const roleText = document.getElementById('roleText');
-    if (!roleText) return;
+    const typedText = document.getElementById('typedText');
+    if (!typedText) return;
 
     const roles = [
         'Machine Learning Researcher',
         'Deep Learning Engineer',
         'NLP Specialist',
-        'Computer Vision Expert',
-        'AI Safety Advocate'
+        'AI Safety Advocate',
+        'Computer Vision Practitioner'
     ];
 
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typeSpeed = 100;
+    let typeSpeed = 80;
 
     function type() {
         const currentRole = roles[roleIndex];
 
         if (isDeleting) {
-            roleText.textContent = currentRole.substring(0, charIndex - 1);
+            typedText.textContent = currentRole.substring(0, charIndex - 1);
             charIndex--;
-            typeSpeed = 50;
+            typeSpeed = 40;
         } else {
-            roleText.textContent = currentRole.substring(0, charIndex + 1);
+            typedText.textContent = currentRole.substring(0, charIndex + 1);
             charIndex++;
-            typeSpeed = 100;
+            typeSpeed = 80;
         }
 
         if (!isDeleting && charIndex === currentRole.length) {
-            typeSpeed = 2500;
+            typeSpeed = 3000; // Pause at end
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             roleIndex = (roleIndex + 1) % roles.length;
-            typeSpeed = 500;
+            typeSpeed = 600; // Pause before new word
         }
 
         setTimeout(type, typeSpeed);
     }
 
+    // Start typing after initial delay
     setTimeout(type, 1500);
 }
 
 /* ========================================
-   SCROLL ANIMATIONS (AOS-like)
+   SCROLL ANIMATIONS
    ======================================== */
 function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('[data-aos]');
+    const animatedElements = document.querySelectorAll('[data-animate]');
+
+    if (!animatedElements.length) return;
 
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
+        rootMargin: '-50px',
         threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const delay = entry.target.dataset.aosDelay || 0;
+                const delay = entry.target.dataset.delay || 0;
                 setTimeout(() => {
-                    entry.target.classList.add('aos-animate');
+                    entry.target.classList.add('animated');
                 }, parseInt(delay));
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -154,58 +170,18 @@ function initScrollAnimations() {
 }
 
 /* ========================================
-   COUNTER ANIMATION
-   ======================================== */
-function initCounterAnimation() {
-    const counters = document.querySelectorAll('.stat-value[data-count]');
-
-    const observerOptions = {
-        threshold: 0.5
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounter(entry.target);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    counters.forEach(counter => observer.observe(counter));
-
-    function animateCounter(counter) {
-        const target = parseInt(counter.dataset.count);
-        const duration = 2000;
-        const startTime = performance.now();
-
-        function update(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const easeOut = 1 - Math.pow(1 - progress, 3);
-            const current = Math.floor(easeOut * target);
-
-            counter.textContent = current;
-
-            if (progress < 1) {
-                requestAnimationFrame(update);
-            } else {
-                counter.textContent = target;
-            }
-        }
-
-        requestAnimationFrame(update);
-    }
-}
-
-/* ========================================
    SMOOTH SCROLL
    ======================================== */
 function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    const anchors = document.querySelectorAll('a[href^="#"]');
+
+    anchors.forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
+
+            if (targetId === '#') return;
+
             const target = document.querySelector(targetId);
 
             if (target) {
@@ -228,12 +204,21 @@ function initBackToTop() {
     const backToTop = document.getElementById('backToTop');
     if (!backToTop) return;
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
+    const handleScroll = () => {
+        if (window.scrollY > 600) {
             backToTop.classList.add('visible');
         } else {
             backToTop.classList.remove('visible');
         }
+    };
+
+    window.addEventListener('scroll', throttle(handleScroll, 100));
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 }
 
@@ -247,29 +232,36 @@ function initContactForm() {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
 
+        // Validation
+        if (!name || !email || !subject || !message) {
+            showNotification('Please fill in all fields.', 'warning');
+            return;
+        }
+
+        // Compose Gmail URL
         const to = 'tanvir.eece.mist@gmail.com';
-        const subjectLine = subject || `Message from ${name}`;
-        const bodyLines = [
-            `Dear Tanvir,`,
+        const subjectLine = subject || `Portfolio Inquiry from ${name}`;
+        const bodyContent = [
+            `Dear Md. Tanvir Hossain,`,
             '',
-            `Name: ${name}`,
-            `Email: ${email}`,
+            `My name is ${name}${email ? ` (${email})` : ''}.`,
             '',
             message,
             '',
             '---',
-            'Sent from Research Portfolio'
-        ];
+            'Message sent via Research Portfolio'
+        ].join('\n');
 
-        const body = encodeURIComponent(bodyLines.join('\n'));
-        const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subjectLine)}&body=${body}`;
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(bodyContent)}`;
 
-        window.open(url, '_blank', 'noopener');
+        // Open Gmail
+        window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+
         showNotification('Opening your email client...', 'success');
         form.reset();
     });
@@ -279,46 +271,63 @@ function initContactForm() {
    NOTIFICATION SYSTEM
    ======================================== */
 function showNotification(message, type = 'info') {
+    // Remove existing notification
     const existing = document.querySelector('.notification');
     if (existing) existing.remove();
 
+    // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
+
+    const icon = type === 'success' ? 'fa-check-circle' :
+                 type === 'warning' ? 'fa-exclamation-triangle' :
+                 'fa-info-circle';
+
     notification.innerHTML = `
-        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'}"></i>
+        <i class="fas ${icon}"></i>
         <span>${message}</span>
     `;
 
+    // Styles
+    const colors = {
+        success: { bg: '#2e7d5a', shadow: 'rgba(46, 125, 90, 0.3)' },
+        warning: { bg: '#b8860b', shadow: 'rgba(184, 134, 11, 0.3)' },
+        info: { bg: '#1e3a5f', shadow: 'rgba(30, 58, 95, 0.3)' }
+    };
+
+    const colorSet = colors[type] || colors.info;
+
     notification.style.cssText = `
         position: fixed;
-        top: 90px;
+        top: 100px;
         right: 24px;
         display: flex;
         align-items: center;
         gap: 12px;
-        padding: 16px 24px;
-        background: linear-gradient(135deg, #0369a1 0%, #0891b2 100%);
+        padding: 18px 28px;
+        background: ${colorSet.bg};
         color: white;
         font-size: 14px;
         font-weight: 500;
         border-radius: 12px;
-        box-shadow: 0 8px 32px rgba(3, 105, 161, 0.3);
+        box-shadow: 0 8px 32px ${colorSet.shadow};
         z-index: 10000;
-        animation: notificationSlideIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        animation: slideInRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     `;
 
     document.body.appendChild(notification);
 
+    // Auto remove
     setTimeout(() => {
-        notification.style.animation = 'notificationSlideOut 0.4s ease forwards';
+        notification.style.animation = 'slideOutRight 0.4s ease forwards';
         setTimeout(() => notification.remove(), 400);
-    }, 3500);
+    }, 4000);
 }
 
-// Add notification animations
-const notificationStyles = document.createElement('style');
-notificationStyles.textContent = `
-    @keyframes notificationSlideIn {
+// Add notification animation styles
+const styleSheet = document.createElement('style');
+styleSheet.textContent = `
+    @keyframes slideInRight {
         from {
             transform: translateX(120%);
             opacity: 0;
@@ -328,7 +337,7 @@ notificationStyles.textContent = `
             opacity: 1;
         }
     }
-    @keyframes notificationSlideOut {
+    @keyframes slideOutRight {
         from {
             transform: translateX(0);
             opacity: 1;
@@ -339,66 +348,96 @@ notificationStyles.textContent = `
         }
     }
 `;
-document.head.appendChild(notificationStyles);
+document.head.appendChild(styleSheet);
 
 /* ========================================
-   PARALLAX EFFECT
+   PARALLAX BADGES
    ======================================== */
-function initParallax() {
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const orbs = document.querySelectorAll('.bg-gradient-orb');
+function initParallaxBadges() {
+    const badges = document.querySelectorAll('.profile-badge');
+    if (!badges.length) return;
 
-        orbs.forEach((orb, index) => {
-            const speed = 0.02 * (index + 1);
-            orb.style.transform = `translateY(${scrolled * speed}px)`;
-        });
-    });
+    let ticking = false;
+
+    const handleScroll = () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const scrollY = window.scrollY;
+                badges.forEach((badge, index) => {
+                    const speed = 0.03 * (index + 1);
+                    const yOffset = scrollY * speed;
+                    badge.style.transform = `translateY(${yOffset}px)`;
+                });
+                ticking = false;
+            });
+            ticking = true;
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll);
 }
 
 /* ========================================
-   CARD HOVER EFFECTS
+   UTILITY FUNCTIONS
    ======================================== */
-document.querySelectorAll('.research-card, .project-card, .info-card, .contact-card').forEach(card => {
+
+// Throttle function for scroll events
+function throttle(func, limit) {
+    let inThrottle;
+    return function(...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+// Debounce function
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+
+/* ========================================
+   CARD INTERACTIONS
+   ======================================== */
+document.querySelectorAll('.research-card, .project-card, .publication-card, .contact-item').forEach(card => {
     card.addEventListener('mouseenter', function() {
-        this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        this.style.transition = 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
     });
 });
 
 /* ========================================
-   IMAGE LOADING
+   IMAGE LAZY LOADING
    ======================================== */
 document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('load', function() {
-        this.style.opacity = '1';
-    });
-    if (img.complete) {
+    img.style.opacity = '0';
+    img.style.transition = 'opacity 0.4s ease';
+
+    const loadImage = () => {
         img.style.opacity = '1';
+    };
+
+    if (img.complete) {
+        loadImage();
+    } else {
+        img.addEventListener('load', loadImage);
     }
 });
 
 /* ========================================
-   KEYBOARD ACCESSIBILITY
+   FOCUS STATES FOR ACCESSIBILITY
    ======================================== */
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        const navMenu = document.getElementById('navMenu');
-        const navToggle = document.getElementById('navToggle');
-        if (navMenu && navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-        }
-    }
-});
-
-/* ========================================
-   FOCUS MANAGEMENT
-   ======================================== */
-document.querySelectorAll('.btn, .nav-item, .social-icon, .project-link, .pub-link').forEach(el => {
+document.querySelectorAll('a, button, input, textarea').forEach(el => {
     el.addEventListener('focus', function() {
         this.style.outline = '2px solid var(--accent-primary)';
-        this.style.outlineOffset = '2px';
+        this.style.outlineOffset = '3px';
     });
+
     el.addEventListener('blur', function() {
         this.style.outline = '';
         this.style.outlineOffset = '';
@@ -406,31 +445,11 @@ document.querySelectorAll('.btn, .nav-item, .social-icon, .project-link, .pub-li
 });
 
 /* ========================================
-   CONSOLE WELCOME
+   CONSOLE BRANDING
    ======================================== */
 console.log(
     '%c Research Portfolio %c Md. Tanvir Hossain ',
-    'background: linear-gradient(135deg, #0369a1, #0891b2); color: white; padding: 10px 16px; border-radius: 8px 0 0 8px; font-weight: bold;',
-    'background: #f1f5f9; color: #1e293b; padding: 10px 16px; border-radius: 0 8px 8px 0; font-weight: 500;'
+    'background: #1e3a5f; color: white; padding: 12px 20px; border-radius: 8px 0 0 8px; font-weight: bold; font-size: 14px;',
+    'background: #f7f5f2; color: #1e3a5f; padding: 12px 20px; border-radius: 0 8px 8px 0; font-weight: 600; font-size: 14px;'
 );
-console.log('%c tanvir.eece.mist@gmail.com | Seeking RA Opportunities', 'color: #0369a1; font-size: 12px;');
-
-/* ========================================
-   PERFORMANCE OPTIMIZATION
-   ======================================== */
-// Debounce scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Apply debounce to scroll-heavy functions
-const debouncedParallax = debounce(initParallax, 10);
-window.addEventListener('scroll', debouncedParallax);
+console.log('%c tanvir.eece.mist@gmail.com | Seeking RA Opportunities in US Research Labs', 'color: #1e3a5f; font-size: 12px;');
