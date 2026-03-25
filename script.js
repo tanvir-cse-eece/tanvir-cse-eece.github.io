@@ -115,11 +115,11 @@ function initTypingAnimation() {
     if (!element) return;
 
     const roles = [
-        'Machine Learning Researcher',
-        'AI Safety Advocate',
-        'Deep Learning Engineer',
-        'Computer Vision Practitioner',
-        'NLP Specialist'
+        'Security & Privacy ML Researcher',
+        'Social Media Safety Analyst',
+        'Adversarial Robustness Enthusiast',
+        'Trustworthy NLP Practitioner',
+        'Data-driven Cybersecurity Research Candidate'
     ];
 
     let roleIndex = 0;
@@ -471,7 +471,7 @@ document.querySelectorAll('.research-card, .project-item, .pub-card, .cap-card, 
    ======================================== */
 document.querySelectorAll('a, button, input, textarea').forEach(element => {
     element.addEventListener('focus', function() {
-        this.style.outline = '2px solid var(--primary)';
+        this.style.outline = '2px solid #0f3f78';
         this.style.outlineOffset = '2px';
     });
 
