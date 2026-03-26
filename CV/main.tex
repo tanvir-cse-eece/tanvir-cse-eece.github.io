@@ -1,0 +1,114 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MD. TANVIR HOSSAIN - RESEARCH CV
+% Updated to match portfolio direction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+\usepackage[scale=0.86]{geometry}
+\usepackage{fontawesome}
+\usepackage{multibbl}
+
+% Name style
+\renewcommand*{\namefont}{\fontsize{20}{24}\bfseries}
+
+% Personal data
+\firstname{Md. Tanvir}
+\familyname{Hossain}
+\address{Dhaka, Bangladesh}{UTC+6 | Open to relocation for RA roles}
+\mobile{(+880) 1837062962}
+\email{tanvir.eece.mist@gmail.com}
+\extrainfo{
+\faGlobe\ \href{https://tanvir-cse-eece.github.io}{Portfolio} \quad
+\faGithub\ \href{https://github.com/tanvir-cse-eece}{GitHub} \quad
+\faLinkedin\ \href{https://www.linkedin.com/in/tanvir-eece-cse}{LinkedIn} \quad
+\faGraduationCap\ \href{https://scholar.google.com}{Scholar}
+}
+\photo[70pt][0.4pt]{../profile.jpg}
+
+\newcommand\Colorhref[3][blue]{\href{#2}{\small\color{#1}#3}}
+
+\begin{document}
+\makecvtitle
+
+\section{Research Objective}
+\cvitem{}{
+Research Assistantship candidate in \textbf{Security, Privacy, and Trustworthy AI}, with emphasis on social-media safety, adversarial robustness, fairness-aware evaluation, and reproducible ML/NLP pipelines.
+}
+
+\section{Education}
+\cvitem{2024--Present}{\textbf{M.Sc. in Computer Science and Engineering}, BRAC University, Dhaka \hfill CGPA: 3.65/4.00}
+\cvitem{2018--2022}{\textbf{B.Sc. (Engg.) in EECE}, Military Institute of Science and Technology (MIST), Dhaka}
+\cvitem{2015--2017}{\textbf{HSC (Science)}, Adamjee Cantonment College}
+
+\section{Research Interests}
+\cvitem{}{Security and Privacy in Online Systems; Social Media Threat Analysis; Adversarial Robustness and Fairness in ML/NLP; Trustworthy and Interpretable AI.}
+
+\section{Selected Publication}
+\newbibliography{conference}
+\nocite{conference}{hasan2024depression}
+\bibliographystyle{conference}{plainyrrev}
+\bibliography{conference}{conference}
+
+\section{Working Papers / Manuscripts}
+\cventry{2026}{\textbf{PoisonWatch: Early Detection of Data Poisoning in Foundation Model Fine-Tuning}}{Preprint (in preparation)}{}{}{
+Threat-aware framework for detecting poisoned batches during fine-tuning using gradient-statistics anomaly signals and robustness evaluation.
+}
+
+\cventry{2026}{\textbf{Privacy Leakage Auditing in Socially Deployed Language Models}}{Working paper}{}{}{
+Auditing framework for leakage risk in language-model outputs with utility-preserving mitigation and fairness checks.
+}
+
+\section{Selected Research Projects}
+\cventry{2026}{\textbf{SocialShield: Harmful Content Risk Detection}}{}{}{}{
+\textit{Tools: PyTorch, Transformers, scikit-learn, Pandas}
+\begin{itemize}
+  \item Built a social-media harmful content detection pipeline with fairness-aware thresholding and robust validation.
+  \item Evaluated macro-F1, AUROC, and subgroup performance gaps under dataset shift.
+\end{itemize}}
+
+\cventry{2026}{\textbf{PrivTextGuard: Privacy Leakage Detection in LLM Outputs}}{}{}{}{
+\textit{Tools: PyTorch, Hugging Face, spaCy}
+\begin{itemize}
+  \item Designed leakage classifier and sanitization pipeline for reducing private-attribute leakage from generated text.
+  \item Balanced privacy-risk reduction with response utility and calibration metrics.
+\end{itemize}}
+
+\cventry{2026}{\textbf{PoisonWatch for Foundation Model Fine-Tuning}}{}{}{}{
+\textit{Tools: PyTorch, NumPy, MLflow}
+\begin{itemize}
+  \item Developed poisoning detection baseline with anomaly scoring over gradient and loss dynamics.
+  \item Measured attack-success reduction and false-positive control under multiple threat settings.
+\end{itemize}}
+
+\cventry{2026}{\textbf{GraphThreatScope: Emerging Threat Characterization in Social Networks}}{}{}{}{
+\textit{Tools: Python, NetworkX, scikit-learn}
+\begin{itemize}
+  \item Modeled temporal interaction patterns to characterize coordinated suspicious behavior in social graphs.
+  \item Built early-warning analysis for high-risk behavior clusters in evolving network streams.
+\end{itemize}}
+
+\section{Research Experience \& Artifacts}
+\cvitem{Research Workflow}{Literature survey, threat modeling, experiment design, ablation studies, reproducible benchmark reporting, technical writing.}
+\cvitem{Artifacts}{Poster summaries, experiment logs, result tables, method notes, and publication-oriented documentation.}
+\cvitem{Code Practice}{Repository setup with clear README, environment notes, train/eval scripts, and reproducibility checklist.}
+
+\section{Technical Skills}
+\cvitem{Programming}{Python, C/C++, Java, MATLAB}
+\cvitem{Machine Learning}{PyTorch, TensorFlow, JAX, scikit-learn}
+\cvitem{NLP / Security}{Transformers, Hugging Face, spaCy, social-data analysis}
+\cvitem{Data \& Tools}{NumPy, Pandas, Matplotlib, NetworkX, MLflow, Git, Docker, Linux}
+\cvitem{Research Tools}{\LaTeX, BibTeX, Overleaf, structured experiment tracking}
+
+\section{Certifications \& Honors}
+\cvitem{2024}{\textbf{Deep Learning Code Management}, CCDS, Independent University, Bangladesh}
+\cvitem{Online}{Machine Learning Research Track (DataCamp), PyTorch for Deep Learning (freeCodeCamp)}
+\cvitem{2019}{\textbf{2nd Runners-up}, Line Follower Robot Competition (Robolution 2019), MIST}
+\cvitem{2018}{\textbf{CompTIA A+ Certification}, MIST}
+
+\section{Availability}
+\cvitem{}{Available for immediate \textbf{RA collaboration} (remote/in-person), open to relocation and long-term research commitments in US labs.}
+
+\end{document}
